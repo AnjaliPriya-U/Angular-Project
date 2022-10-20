@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h2>upcomingMovies</h2>
+    <section class="card-list">
+      <article class="card" *ngFor="let m of popularMovies">
+        <a routerLink="/movie/{{ m.id }}">
+          <div>
+            <img
+              src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}"
+              class="card-img-top"
+              alt="..."/>
+          </div> 
+          <div class="tags">
+            <a routerLink="/movie/{{ m.id }}">Movie details</a>
+          </div>
+          <p>{{ m.title }}</p>
+        </a>
+      </article>
+    </section>
+  </body>
+</html>

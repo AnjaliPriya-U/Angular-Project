@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.c {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(128, 128, 128,0.5);
+  padding: 20px;
+
+}
+
+.c1 {
+  padding: 80px;
+  background-color: rgb(90, 87, 87);
+   background: #201c29;
+  /* background: #17141d; */
+}

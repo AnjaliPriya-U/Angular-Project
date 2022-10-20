@@ -1,0 +1,141 @@
+<app-navbar></app-navbar>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item item active">
+      <div
+        class="movie-info"
+        style="background-image: url('https://image.tmdb.org/t/p/w500//7ABsaBkO1jA2psC8Hy4IDhkID4h.jpg');">
+        <div class="movie-detail">
+          <h1 class="movie-name">Avatar: The Way of Water</h1>
+          <a
+            href="https://www.youtube.com/watch?v=a8Gx8wiNbs8"
+            target="_blank"
+            style="color: white; opacity: 0.7">
+            <i class="bx bx-play"></i>Watch trailer</a  >
+
+          <div class="tag">
+            <a routerLink="/book/76600" routerLinkActive="active">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div
+        class="movie-info"
+        style="background-image: url('https://image.tmdb.org/t/p/w500//14QbnygCuTO0vl7CAFmPf1fgZfV.jpg');">
+        <div class="movie-detail">
+          <h1 class="movie-name">Spider-Man: No Way Home</h1>
+          <a
+            href="https://www.youtube.com/watch?v=JfVOs4VSpmA"
+            target="_blank"
+            style="color: white; opacity: 0.7"  >
+            <i class="bx bx-play"></i>Watch trailer</a>
+
+          <div class="tag">
+            <a routerLink="/book/634649" routerLinkActive="active">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div
+        class="movie-info"
+        style="background-image: url('https://image.tmdb.org/t/p/w500//jzWT0zd8U77fqWg5WgUfYaMzSFz.jpg');">
+        <div class="movie-detail">
+          <h1 class="movie-name">Morbius</h1>
+          <a
+            href="https://www.youtube.com/watch?v=oZ6iiRrz1SY"
+            target="_blank"
+            style="color: white; opacity: 0.7" >
+            <i class="bx bx-play"></i>Watch trailer</a >
+
+          <div class="tag">
+            <a routerLink="/book/526896" routerLinkActive="active">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-target="#carouselExampleControls"
+    data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-target="#carouselExampleControls"
+    data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>latestMovies</h2>
+    <section class="card-list">
+      <article class="card" *ngFor="let m of latestMovies">
+        <a routerLink="/movie/{{ m.id }}">
+          <div>
+            <img
+              src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}"
+              class="card-img-top"
+              alt="..."/>
+          </div>
+          <div class="tags">
+            <a routerLink="/movie/{{ m.id }}">Movie details</a>
+          </div>
+          <p>{{ m.title }}</p>
+        </a>
+      </article>
+    </section>
+    <h2>nowPlayingMovies</h2>
+    <section class="card-list">
+      <article class="card" *ngFor="let m of nowPlayingMovies">
+        <a routerLink="/movie/{{ m.id }}">
+          <div>
+            <img
+              src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}"
+              class="card-img-top"
+              alt="..."/>
+          </div>
+          <div class="tags">
+            <a routerLink="/movie/{{ m.id }}">Movie details</a>
+          </div>
+          <p>{{ m.title }}</p>
+        </a>
+      </article>
+    </section>
+    <h2>popularMovies</h2>
+    <section class="card-list">
+      <article class="card" *ngFor="let m of popularMovies">
+        <a routerLink="/movie/{{ m.id }}">
+          <div>
+            <img
+              src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}"
+              class="card-img-top"
+              alt="..."/>
+          </div>
+          <div class="tags">
+            <a routerLink="/movie/{{ m.id }}">Movie details</a>
+          </div>
+          <p>{{ m.title }}</p>
+        </a>
+      </article>
+    </section>
+  </body>
+</html>

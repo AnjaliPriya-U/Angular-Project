@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="c">
+  <div class="container-fluid">
+    <div
+      class="movie-info"
+      style="background-image: url('https://image.tmdb.org/t/p/w500/{{movieDetails.backdrop_path}}');"
+    >
+      <div class="movie-detail">
+        <h1 class="movie-name">{{ movieDetails.title }}</h1>
+        <!-- <p class="genres"><span>Runtime: </span>{{ movieDetails.runtime }} minutes</p> -->
+        <p class="des">
+          <span class="genres">Overview: </span>{{ movieDetails.overview }}
+        </p>
+        <p class="starring">
+          <span>Rating: </span>{{ movieDetails.vote_average }}
+        </p>
+        <a href="{{ movieDetails.homepage }}" target="_blank">
+          <i class="bx bx-play"></i>Watch movie</a
+        >
+        <a
+          href="https://www.youtube.com/watch?v={{ movieTrailer }}"
+          target="_blank"
+        >
+          <i class="bx bx-play"></i>Watch trailer</a
+        >
+
+        <div class="tag">
+          <a routerLink="/book/{{ movieDetails.id }}" routerLinkActive="active"
+            >Book</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2>Recommendations</h2>
+  <section class="card-list">
+    <article class="card" *ngFor="let m of recommendation">
+      <a routerLink="/movie/{{ m.id }}" target="_blank">
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}"
+            class="card-img-top"
+            alt="..."
+          />
+        </div>
+        <div class="tags">
+          <a routerLink="/movie/{{ m.id }}">Movie details</a>
+        </div>
+        <p>{{ m.title }}</p>
+      </a>
+    </article>
+  </section>
+</div>
